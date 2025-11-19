@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wolcott Community Trust</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d', // Deep Vermont Green
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a polished look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="bg-brand-800 text-white p-2 rounded-lg">
+                        <i data-lucide="tree-pine" class="h-6 w-6"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-brand-900">Wolcott Community Trust</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-slate-600 hover:text-brand-700 font-medium transition-colors">Home</a>
+                    <a href="#projects" class="text-slate-600 hover:text-brand-700 font-medium transition-colors">Projects</a>
+                    <a href="#documents" class="text-slate-600 hover:text-brand-700 font-medium transition-colors">Documents</a>
+                    <a href="#community" class="text-slate-600 hover:text-brand-700 font-medium transition-colors">Community</a>
+                    <a href="#contact" class="text-slate-600 hover:text-brand-700 font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-700 focus:outline-none p-2">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-100">
+            <div class="px-4 pt-2 pb-6 space-y-1 shadow-lg">
+                <a href="#home" class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand-700 hover:bg-brand-50 rounded-md">Home</a>
+                <a href="#projects" class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand-700 hover:bg-brand-50 rounded-md">Projects</a>
+                <a href="#documents" class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand-700 hover:bg-brand-50 rounded-md">Documents</a>
+                <a href="#community" class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand-700 hover:bg-brand-50 rounded-md">Community</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand-700 hover:bg-brand-50 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Home) -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 -z-10">
+             <!-- Abstract background pattern representing topography/nature -->
+            <svg class="absolute left-[50%] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-slate-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]" aria-hidden="true">
+                <defs>
+                    <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+                        <path d="M100 200V.5M.5 .5H200" fill="none" />
+                    </pattern>
+                </defs>
+                <svg x="50%" y="-1" class="overflow-visible fill-brand-50">
+                    <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0" />
+                </svg>
+                <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-brand-100 text-brand-800 text-sm font-semibold mb-6 tracking-wide">EST. 2025</span>
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-slate-900 tracking-tight mb-6">
+                Building Resilience in <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-700 to-emerald-500">Wolcott, Vermont</span>
+            </h1>
+            <p class="mt-4 text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                Dedicated to transparency, housing development, rural resilience, and activating community wealth.
+            </p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="#projects" class="px-8 py-4 bg-brand-800 hover:bg-brand-900 text-white font-semibold rounded-xl shadow-lg shadow-brand-500/20 transition-all transform hover:-translate-y-1">
+                    View Our Projects
+                </a>
+                <a href="#community" class="px-8 py-4 bg-white text-brand-900 border border-slate-200 hover:border-brand-300 hover:bg-brand-50 font-semibold rounded-xl transition-all">
+                    Get Involved
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-brand-600 font-semibold tracking-wide uppercase">Our Initiatives</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">Active Projects</p>
+                <p class="mt-4 max-w-2xl text-xl text-slate-500 mx-auto">From revitalizing historic assets to modern infrastructure.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+                <!-- Project 1 -->
+                <div class="group relative bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300">
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6 text-orange-600">
+                            <i data-lucide="store" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Fred’s Store Redevelopment</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Revitalizing a historic village asset into a modern community hub. We are preserving the architectural heritage while creating space for local business and gathering.
+                        </p>
+                    </div>
+                    <div class="h-2 bg-orange-500 w-0 group-hover:w-full transition-all duration-500"></div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300">
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+                            <i data-lucide="home" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Duplex Housing Pivot</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Building affordable, resilient housing for Wolcott families. Focusing on energy efficiency and sustainable materials to lower long-term costs for residents.
+                        </p>
+                    </div>
+                    <div class="h-2 bg-blue-500 w-0 group-hover:w-full transition-all duration-500"></div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300">
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6 text-purple-600">
+                            <i data-lucide="wifi" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Telecom & CBRS Pilot</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Deploying small cell infrastructure for village-scale coverage. Bringing reliable connectivity to underserved areas to support education and remote work.
+                        </p>
+                    </div>
+                    <div class="h-2 bg-purple-500 w-0 group-hover:w-full transition-all duration-500"></div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="group relative bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300">
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-6 text-emerald-600">
+                            <i data-lucide="file-text" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Community Documentation</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Creating replicable, grant-friendly civic documentation systems for transparency and resilience. Building the digital memory of our town.
+                        </p>
+                    </div>
+                    <div class="h-2 bg-emerald-500 w-0 group-hover:w-full transition-all duration-500"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section id="documents" class="py-20 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl font-bold text-slate-900">Public Documents</h2>
+                    <p class="mt-4 text-lg text-slate-600">We publish transcripts and grant applications to ensure transparency and citizen access.</p>
+                </div>
+                <button class="mt-4 md:mt-0 flex items-center text-brand-700 font-semibold hover:text-brand-800">
+                    View Archive <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                </button>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+                    
+                    <!-- Transcripts Column -->
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="p-2 bg-blue-50 rounded-lg text-blue-600"><i data-lucide="mic" class="w-5 h-5"></i></div>
+                            <h3 class="text-xl font-bold text-slate-900">Selectboard Transcripts</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li>
+                                <a href="#" class="group flex items-start p-3 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-200">
+                                    <i data-lucide="file-check" class="w-5 h-5 text-slate-400 group-hover:text-brand-600 mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="block font-medium text-slate-900 group-hover:text-brand-700">November 2025 Transcript</span>
+                                        <span class="text-sm text-slate-500">PDF &bull; 2.4 MB</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="group flex items-start p-3 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-200">
+                                    <i data-lucide="file-check" class="w-5 h-5 text-slate-400 group-hover:text-brand-600 mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="block font-medium text-slate-900 group-hover:text-brand-700">October 2025 Transcript</span>
+                                        <span class="text-sm text-slate-500">PDF &bull; 1.8 MB</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Grants Column -->
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="p-2 bg-amber-50 rounded-lg text-amber-600"><i data-lucide="landmark" class="w-5 h-5"></i></div>
+                            <h3 class="text-xl font-bold text-slate-900">Grant Applications</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li>
+                                <a href="#" class="group flex items-start p-3 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-200">
+                                    <i data-lucide="scroll" class="w-5 h-5 text-slate-400 group-hover:text-brand-600 mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="block font-medium text-slate-900 group-hover:text-brand-700">Housing Grant 2025</span>
+                                        <span class="text-sm text-slate-500">PDF &bull; 4.2 MB &bull; Pending Review</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20 bg-brand-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Powered by People</h2>
+                    <p class="text-brand-100 text-lg leading-relaxed mb-8">
+                        The Wolcott Community Trust isn't just an organization; it's a collective effort. Citizens are invited to volunteer, donate, and attend meetings. Together we build resilience.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center border border-brand-700">
+                                <i data-lucide="hammer" class="w-5 h-5 text-brand-200"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Volunteer</h4>
+                                <p class="text-brand-200 text-sm">Help with housing projects, documentation, and community events.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center border border-brand-700">
+                                <i data-lucide="message-circle" class="w-5 h-5 text-brand-200"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Feedback</h4>
+                                <p class="text-brand-200 text-sm">Share your ideas with us through our digital forms.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <a href="https://forms.gle/example" target="_blank" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-brand-900 bg-white hover:bg-brand-50 transition-colors shadow-lg">
+                            Open Feedback Form <i data-lucide="external-link" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Visual Card -->
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-brand-500/30 rounded-2xl blur-lg"></div>
+                    <div class="relative bg-brand-800 border border-brand-700 rounded-2xl p-8 md:p-12">
+                        <h3 class="text-2xl font-bold mb-4">Upcoming Events</h3>
+                        <div class="space-y-4">
+                            <div class="flex gap-4 items-center bg-brand-900/50 p-4 rounded-lg">
+                                <div class="text-center min-w-[3.5rem] bg-brand-700 rounded p-2">
+                                    <span class="block text-xs uppercase font-bold text-brand-200">Nov</span>
+                                    <span class="block text-xl font-bold text-white">15</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Selectboard Meeting</p>
+                                    <p class="text-xs text-brand-300">7:00 PM @ Town Hall</p>
+                                </div>
+                            </div>
+                             <div class="flex gap-4 items-center bg-brand-900/50 p-4 rounded-lg">
+                                <div class="text-center min-w-[3.5rem] bg-brand-700 rounded p-2">
+                                    <span class="block text-xs uppercase font-bold text-brand-200">Dec</span>
+                                    <span class="block text-xl font-bold text-white">02</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Housing Strategy Workshop</p>
+                                    <p class="text-xs text-brand-300">5:30 PM @ Community Center</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">Get in Touch</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-white shadow-sm rounded-full flex items-center justify-center mx-auto mb-4 text-brand-600">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900 mb-2">Email Us</h3>
+                    <p class="text-slate-600 text-sm break-all">info@wolcottcommunitytrust.org</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-white shadow-sm rounded-full flex items-center justify-center mx-auto mb-4 text-brand-600">
+                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900 mb-2">Visit Us</h3>
+                    <p class="text-slate-600 text-sm">4253 VT Route 15<br>Wolcott, Vermont</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-white shadow-sm rounded-full flex items-center justify-center mx-auto mb-4 text-brand-600">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900 mb-2">Join Meetings</h3>
+                    <p class="text-slate-600 text-sm">Monthly Selectboard meetings.<br>Dates posted in documents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2 text-white">
+                 <i data-lucide="tree-pine" class="h-6 w-6 text-brand-500"></i>
+                 <span class="font-bold text-lg">Wolcott Community Trust</span>
+            </div>
+            <p class="text-slate-400 text-sm">
+                &copy; 2025 Wolcott Community Trust. All rights reserved.
+            </p>
+            <div class="flex gap-4">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('bg-white/90', 'bg-white/95');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('bg-white/95', 'bg-white/90');
+            }
+        });
+    </script>
+</body>
+</html>
